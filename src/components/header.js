@@ -10,9 +10,9 @@ export default function Header(props) {
             <Nav className="ml-auto">
                 <Nav.Item style={{ marginRight: '40px' }} href="#home">
                     <Nav.Link href="/homepage">
-                        <span style={{color: 'black'}}>S</span>
-                        <span style={{color: 'orange'}}>EAT</span>
-                        <span style={{color: 'black'}}>TLE</span>
+                        <span style={{color: 'black'}}>i</span>
+                        <span style={{color: 'orange'}}>DAWG</span>
+                        <span style={{color: 'black'}}>KNOW</span>
                     </Nav.Link>
                 </Nav.Item>
             </Nav>
