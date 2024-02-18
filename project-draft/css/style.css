@@ -1,0 +1,603 @@
+html,
+body,
+body::before {
+    height: 100%;
+}
+
+body {
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/bak.JPG');
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-spacing: 63px;
+}
+
+span {
+    color: orange;
+}
+
+.logo {
+    font-size: 45px;
+    line-height: 55px;
+    font-family: 'Montserrat';
+    color: black;
+    text-decoration: none;
+    margin-left: 40px;
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.nav-items {
+    font-size: 24px;
+    font-family: 'Montserrat';
+    align-items: center;
+    margin-right: 40px;
+    margin-top: 40px;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: #000;
+    padding: 35px 20px;
+}
+
+
+/* style for homepage */
+
+.home p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 45px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.home .welcome {
+    position: absolute;
+    margin-left: 36%;
+    right: 10%;
+    top: 30%;
+    bottom: 58%;
+    padding: 1.5rem;
+}
+
+.what {
+    position: absolute;
+    margin-left: 36%;
+    right: 10.42%;
+    top: 44.82%;
+    bottom: 47.66%
+}
+
+.home .search {
+    position: absolute;
+    left: 60%;
+    right: 19%;
+    top: 59%;
+    bottom: 34%;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.home .search input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.home .filters {
+    position: absolute;
+    left: 3%;
+    right: 10%;
+    top: 80%;
+    bottom: 10%;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    font-size: 20px;
+}
+
+.home .filter-group {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    font-size: 23px;
+}
+
+.home .filter-group label {
+    margin-right: 15px;
+}
+
+.home .filter-group select {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f5f5f5;
+    color: #444;
+    font-size: 14px;
+
+}
+
+.home button#reset {
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.home .container {
+    margin-top: 700px;
+}
+
+.home .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.home .card {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
+}
+
+.home .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.home .card img {
+    border-radius: 10px 10px 0 0;
+    display: block;
+    max-width: 100%;
+    height: 75%;
+}
+
+.home .card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home .card-details h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+
+
+/* style for quiz */
+
+.quiz h2 {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ff8d50;
+    text-shadow: 1px 1px lightgray;
+}
+
+.quiz .cards {
+    display: flex;
+    justify-content: center;
+}
+
+.quiz .card {
+    flex: 0 0 400px;
+    background-color: white;
+    margin: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16),
+        0 1px 3px rgba(0, 0, 0, 0.23);
+    background: linear-gradient(to bottom, #FFFFFF, #fce2ca);
+}
+
+.quiz dt {
+    padding: 10px 10px 3px;
+    font-size: 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.quiz dd {
+    margin: 3rem;
+    padding: 10px 10px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.quiz dd#radio {
+    text-align: center;
+}
+
+.quiz label {
+    margin: 10px;
+    font-size: 1rem;
+
+}
+
+.quiz .row {
+    padding-bottom: 10px;
+}
+
+.quiz .buttons {
+    text-align: center;
+}
+
+.quiz button {
+    margin: 1rem 2rem;
+    padding: .5rem 4rem;
+    border-radius: 10px;
+    background-color: #ff8d50;
+    border-color: none;
+    color: white;
+}
+
+.quiz .title {
+    text-align: center;
+}
+
+/* style for compare */
+
+.compare h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.compare .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.compare .main-heading {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+.compare .description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.compare hr {
+    border-top: 1px solid #ccc;
+    opacity: 0.5;
+    margin-bottom: 30px;
+}
+
+.compare .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    margin-bottom: 20px;
+}
+
+.compare .col {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.compare .card {
+    background-color: #fffdfd;
+    box-shadow: 0 0 10px rgb(255, 179, 108);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.compare .card-title {
+    margin-top: 0;
+}
+
+.compare .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.compare .card-factors {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.compare .card-factors li {
+    margin-bottom: 5px;
+}
+
+.compare .rating {
+    color: rgb(255, 183, 0);
+}
+
+.compare h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.compare ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.compare li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.compare li:last-child {
+    border-bottom: none;
+}
+
+.compare .btn {
+    display: inline-block;
+    background-color: #ffa500;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.compare .btn:hover {
+    background-color: #F08000;
+}
+
+.compare .compare-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.compare .compare-container .btn {
+    margin: 0;
+    box-shadow: 0 0 5px rgba(34, 32, 32, 0.851);
+    font-weight: bold;
+}
+
+.compare .compare-container .btn+div {
+    margin-left: 20px;
+}
+
+.compare .input-field {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: sans-serif;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.compare .bold-label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+/* style for community */
+
+.community .card {
+    margin: 10%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    border-radius: 20px;
+}
+
+.community .card-img {
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.community .item-img {
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.community .card-body {
+    padding: 30px;
+}
+
+.community .card-link {
+    text-decoration: none;
+    color: #18588d;
+}
+
+.community .card-title {
+    font-size: 24px;
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.community .card-text {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.community .card-time {
+    align-items: center;
+    font-size: 10px;
+    color: #474747;
+}
+
+.community .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+
+.community .item_card {
+    margin: 10%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    border-radius: 20px;
+}
+
+.community .item-card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.community .item-card-spacefiller {
+    flex-grow: 1;
+}
+
+/* style for signin */
+.sign .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sign .card {
+    flex: 300px;
+    background-color: white;
+    margin-top: 5rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16),
+        0 1px 3px rgba(0, 0, 0, 0.23);
+    background: linear-gradient(to bottom, #FFFFFF, #fce2ca);
+}
+
+.sign h1 {
+    padding-top: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 90px;
+    color: orange;
+    text-shadow: 5px 5px #153c43;
+}
+
+.sign h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.sign form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign label {
+    margin-bottom: 10px;
+}
+
+.sign input[type="email"],
+input[type="password"],
+input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.sign button {
+    margin-bottom: 70px;
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: orange;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* style for res */
+/* Media query for small screens */
+@media screen and (min-width: 768px) {
+    nav ul {
+        flex-direction: row;
+    }
+
+    main {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+/* Media query for large screens */
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+
+    header,
+    footer {
+        padding: 2rem;
+    }
+
+    nav ul {
+        gap: 2rem;
+    }
+
+    nav a {
+        padding: 1rem;
+    }
+
+    main {
+        max-width: 1200px;
+    }
+}

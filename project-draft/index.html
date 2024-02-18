@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kaidi Chen, Stephanie Wang, Cici Zhao, Zonglin Zuo">
+    <meta name="description" content="This is the final project homepage.">
+    <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home">
+    <header>
+        <a href="#" class="logo">S<span>EAT</span>TLE</a>
+        <nav class="nav-items">
+            <a href="homepage.html"><span>HOME</span></a>
+            <a href="quiz.html">QUIZ</a>
+            <a href="compare.html">COMPARE</a>
+            <a href="community.html">COMMUNITY</a>
+            <a href="signin.html" class="signin">SIGN-IN</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro">
+            <p class="welcome">Welcome to S<span>EAT</span>TLE!</p>
+            <p class="what">What do you want to eat today?
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="Search for Cuisines, Location...">
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="ranking">Ranking:</label>
+                <select id="ranking">
+                    <option value="all">All</option>
+                    <option value="5">5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="3">2 Stars</option>
+                    <option value="3">1 Stars</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="categories">Food Categories:</label>
+                <select id="categories">
+                    <option value="all">All</option>
+                    <option value="fast">Fast Food</option>
+                    <option value="American">American Food</option>
+                    <option value="Asian">Asian Food</option>
+                    <option value="Mexican">Mexican Food</option>
+                </select>
+            </div>
+          
+            <div class="filter-group">
+                <label for="price">Price:</label>
+                <select id="price">
+                    <option value="all">All</option>
+                    <option value="$$$">$$$$</option>
+                    <option value="$$$">$$$</option>
+                    <option value="$$">$$</option>
+                    <option value="$">$</option>
+                </select>
+            </div>
+          
+            <div class="filter-group">
+                <label for="service">Service:</label>
+                <select id="service">
+                    <option value="all">All</option>
+                    <option value="outdoor">Outdoor Seating</option>
+                    <option value="indoor">Indoor Seating</option>
+                    <option value="takeout">Takeout</option>
+                </select>
+            </div>
+
+            <button id="reset">Reset Filters</button>
+            <button id="reset">Search</button>
+
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="card">
+                    <img src="img/ham.png" alt="Burger and Kabob Hut restaurant">
+                    <div class="card-details">
+                        <h2>Burger and Kabob Hut</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/pizza.jpg" alt="Pizza market's pizza">
+                    <div class="card-details">
+                        <h2>Pizza Market</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/w.jpg" alt="Chicken Factory's wings">
+                    <div class="card-details">
+                        <h2>Chicken Factory</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <img src="img/t.jpg" alt="Tang Cu Yu's fish">
+                    <div class="card-details">
+                        <h2>Tang Cu Yu</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/b.jpg" alt="Joey Kitchen beef">
+                    <div class="card-details">
+                        <h2>Joey Kitchen</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/pho.jpg" alt="Pho Kitchen's Pho">
+                    <div class="card-details">
+                        <h2>Pho Kitchen</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        <p>&copy; SEATTLE RESTAURANT</p >
+    </footer>
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Compare</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Compare Restaurants</title>
+</head>
+
+<body class="compare">
+    <header>
+        <a href=" " class="logo">S<span>EAT</span>TLE</a>
+        <nav class="nav-items">
+            <a href="homepage.html">HOME</a>
+            <a href="quiz.html">QUIZ</a>
+            <a href="compare.html"><span>COMPARE</span></a>
+            <a href="community.html">COMMUNITY</a>
+            <a href="signin.html" class="signin">SIGN-IN</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1 class="main-heading">Compare Restaurants</h1>
+        <p class="description">Can't decide between two restaurants? Enter their names down below to compare them!</p>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <label for="restaurant1" class="bold-label">Enter Restaurant 1:</label>
+                <input type="text" id="restaurant1" name="restaurant1" class="input-field">
+            </div>
+            <div class="col">
+                <label for="restaurant2" class="bold-label">Enter Restaurant 2:</label>
+                <input type="text" id="restaurant2" name="restaurant2" class="input-field">
+            </div>
+        </div>
+        <div class="compare-container">
+            <button type="button" class="btn">Compare</button>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="card">
+					<h2 class="card-title">The Pink Door</h2>
+					<img class="card-img" src="img/thepinkdoor.jpg" alt="The Pink Door Seafood Pasta Dish">
+					<p class="card-text">Along the quaint Post Alley at Seattle’s Pike Place Market awaits one of the city’s most beloved restaurant destinations since 1981: The Pink Door.</p>
+					<ul class="card-factors">
+                        <li><strong>Rating:</strong> 
+                            <span class="rating">4.5 &#9733;</span>
+                        </li>
+						<li><strong>Price:</strong> $$</li>
+						<li><strong>Location:</strong> Downtown</li>
+						<li><strong>Type of Food:</strong> Italian</li>
+					</ul>
+					<a href="#" class="btn">Visit Website</a>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<h2 class="card-title">Ba Bar</h2>
+					<img class="card-img" src="img/babar.jpg" alt="BaBar Food and Drink Collage">
+					<p class="card-text">The word “Ba” means father in Vietnamese. We named this place after our own dad, who inspired us all in so many different ways.</p>
+					<ul class="card-factors">
+                        <li><strong>Rating:</strong> 
+                            <span class="rating">3.5 &#9733;</span>
+                        </li>
+						<li><strong>Price:</strong>$$</li>
+						<li><strong>Location:</strong>South Lake Union</li>
+						<li><strong>Type of Food:</strong>Vietnamese</li>
+					</ul>
+					<a href="#" class="btn">Visit Website</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    <footer>
+        <p>&copy; SEATTLE RESTAURANT</p >
+    </footer>
+</body>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz page</title>
+  <!-- This stylesheet will somewhat "normalize" the styling across browsers -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="quiz">
+  <header>
+    <a href=" " class="logo">S<span>EAT</span>TLE</a >
+    <nav class="nav-items">
+      <a href="homepage.html">HOME</a>
+      <a href="quiz.html"><span>QUIZ</span></a>
+      <a href="compare.html">COMPARE</a>
+      <a href="community.html">COMMUNITY</a>
+      <a href="signin.html" class="signin">SIGN-IN</a>
+    </nav>
+  </header>
+  <main>
+    <div class="title">
+      <h1>Take a Quiz to Find the Right Restaurants for You</h1>
+      <p class="description">This short quiz will help us find all the right restaurants to serve you best</p>
+    </div>
+    <form>
+      <div class="cards">
+        <div class = "card">
+          <div id="dietary">
+            <h2> Part1. Cuisine and Dietary Restrictions</h2>
+            <dl>
+              <dt>What type of cuisine do you prefer?</dt>
+                <dd id="selection">
+                  <div class="row">
+                    <label><input type="checkbox" name="option1" value="American">American</label>
+                    <label><input type="checkbox" name="option2" value="Chinese">Chinese</label>
+                    <label><input type="checkbox" name="option3" value="Indian">Indian</label>
+                  </div>
+                  <div class="row">
+                    <label><input type="checkbox" name="option4" value="Hawaiian">Hawaiian</label>
+                    <label><input type="checkbox" name="option5" value="Vietnamese">Vietnamese</label>
+                    <label><input type="checkbox" name="option6" value="Japanese">Japanese</label>
+                  </div>
+                  <div class="row">
+                    <label><input type="checkbox" name="option7" value="Mexican">Mexican</label>
+                    <label><input type="checkbox" name="option8" value="Mediterranean">Mediterranean</label>
+                    <label><input type="checkbox" name="option9" value="Italian">Italian</label>
+                  </div>
+                  <div class="row">
+                    <label><input type="checkbox" name="option10" value="Korean">Korean</label>
+                    <label><input type="checkbox" name="option10" value="No matters">No matters</label>
+                  </div>
+                </dd>
+              <dt>Do you have any dietary restrictions?</dt>
+                <dd id="selection">
+                  <div class="row">
+                    <label><input type="checkbox" name="option1" value="Vegetarian">Vegetarian</label>
+                    <label><input type="checkbox" name="option2" value="Vegan">Vegan</label>
+                  </div>
+                  <div class="row">
+                    <label><input type="checkbox" name="option3" value="Gluten-free">Gluten-free</label>
+                    <label><input type="checkbox" name="option3" value="Seafood">Seafood</label>
+                    <label><input type="checkbox" name="option3" value="None">None</label>
+                  </div>
+                </dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class = "card">
+          <div id="restaurant">
+            <h2> Part2. Restaurants Preference</h2>
+            <dl>
+              <dt>What type of restaurant are you looking for?</dt>
+                <dd id="selection">
+                  <div class="row">
+                    <label><input type="checkbox" name="option1" value="Bar">Bar</label>
+                    <label><input type="checkbox" name="option2" value="Barbeque">Barbeque</label>
+                  </div>
+                  <div class="row">
+                    <label><input type="checkbox" name="option3" value="Venues & Event Spaces">Venues & Event Spaces</label>
+                    <label><input type="checkbox" name="option4" value="Cafe">Cafe</label>
+                  </div>
+                  <div class="row">
+                    <label><input type="checkbox" name="option5" value="Breakfast & Brunch">Breakfast & Brunch</label>
+                    <label><input type="checkbox" name="option6" value="Bakeries">Bakeries</label>
+                    <label><input type="checkbox" name="option7" value="No matters">No matters</label>
+                  </div>
+                </dd>
+              <dt>What minimum rating do you prefer?</dt>
+                <dd id="radio">
+                  <div class="row">
+                    <input type="radio" id="option1" name="option1" value="1">
+                    <label for="1">1</label>
+                    <input type="radio" id="option2" name="option2" value="2">
+                    <label for="2">2</label>
+                    <input type="radio" id="option3" name="option3" value="3">
+                    <label for="3">3</label>
+                  </div>
+                  <div class="row">
+                    <input type="radio" id="option4" name="option4" value="4">
+                    <label for="4">4</label>
+                    <input type="radio" id="option5" name="option5" value="5">
+                    <label for="5">5</label>
+                    <input type="radio" id="option6" name="option6" value="no">
+                    <label for="no">No matter</label>
+                  </div>
+                </dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class = "card">
+          <div id="personal">
+            <h2> Part3. Personal Preference</h2>
+            <dl>
+              <dt>What is your budget?</dt>
+                <dd id="radio">
+                  <div class="row">
+                    <input type="radio" id="option1" name="option1" value="$">
+                    <label for="$">$</label>
+                    <input type="radio" id="option2" name="option2" value="$$">
+                    <label for="$$">$$</label>
+                  </div>
+                  <div class="row">
+                    <input type="radio" id="option3" name="option3" value="$$$">
+                    <label for="$$$">$$$</label>
+                    <input type="radio" id="option4" name="option4" value="$$$$">
+                    <label for="$$$$">$$$$</label>
+                    <input type="radio" id="option5" name="option5" value="no">
+                    <label for="no">No matter</label>
+                  </div>
+                </dd>
+              <dt>Do you have any specific food want to eat today?</dt>
+                <dd id="selection">
+                  <div class="row">
+                    <label><input type="checkbox" name="option1" value="Seafood">Seafood</label>
+                    <label><input type="checkbox" name="option2" value="Desserts">Desserts</label>
+                    <label><input type="checkbox" name="option3" value="Noodles">Noodles</label>
+                    <label><input type="checkbox" name="option4" value="Burgers">Burgers</label>
+                  </div>
+                  <div class="row">
+                    <label><input type="checkbox" name="option5" value="Bubble Tea">Bubble Tea</label>
+                    <label><input type="checkbox" name="option6" value="Hot Pot">Hot Pot</label>
+                    <label><input type="checkbox" name="option7" value="Tacos">Tacos</label>
+                    <label><input type="checkbox" name="option3" value="None">None</label>
+                  </div>
+                </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; SEATTLE RESTAURANT</p >
+  </footer>
+</body>
+</html>
