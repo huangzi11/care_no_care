@@ -7,14 +7,9 @@ import { Outlet } from 'react-router-dom';
 export function FilterForm(props) {
 
 
-    let parts = ['Part1. Cuisine and Dietary Restrictions', 'Part2. Restaurants Preference', 'Part3. Personal Preference'];
-    let questions = ['What types of cuisine do you prefer?', 'Do you have any dietary restrictions?', 'What type of restaurant are you looking for?', 'What ratings do you prefer?', 'What are all your accepted budget?', 'Do you have any specific food want to eat today?']
-    let cuisine = ["American", "Chinese", "Indian", "Hawaiian", "Vietnamese", "Japanese", "Mexican", "Mediterranean", "Italian", "Korean"]
-    let dietary = ["Vegetarian", "Vegan", "Gluten-free", "Seafood"]
-    let type = ["Bar", "Barbeque", "Venues & Event Spaces", "Cafe", "Breakfast & Brunch", "Bakeries"]
-    let rate = ['1', '2', '3', '4', '5']
-    let budget = ["$", "$$", "$$$", "$$$$"]
-    let food = ["Desserts", "Noodles", "Burgers", "Bubble Tea", "Hot Pot","Tacos"]
+    let parts = ['Information Category'];
+    let questions = ['What category of information do you care about?']
+    let type = ["Student Organization", "Election", "Scholarships", "Diversity", "Industry", "Career Opportunities", "Panel Talk"]
     let categoryTitleArray = parts.map((title) => {
         return (<h3 className="parts">{title}</h3>)
     })
@@ -23,26 +18,7 @@ export function FilterForm(props) {
         return (<p className="questions">{directions}</p>)
     })
 
-    let cuisineArray = cuisine.map((obj) => {
-        return obj;
-    })
-    let dietaryArray = dietary.map((obj) => {
-        return obj;
-    })
-
     let typeArray = type.map((obj) => {
-        return obj;
-    })
-
-    let budgeteArray = budget.map((obj) => {
-        return obj;
-    })
-
-    let ratingArray = rate.map((obj) => {
-        return obj;
-    })
-
-    let foodArray = food.map((obj) => {
         return obj;
     })
 
@@ -63,8 +39,8 @@ export function FilterForm(props) {
     return (
         <div className="quiz">
             <div className="quiz_title">
-                <h1>Take a Quiz to Find the Right Restaurants for You</h1>
-                <p className="description">This short quiz will help us find all the right restaurants to serve you best</p>
+                <h1>Take a Quiz to Find Your Most Cared</h1>
+                <p className="description">This short quiz will help us find all your most cared information within iSchool</p>
             </div>
 
             <Accordion defaultActiveKey="0" flush>
@@ -73,30 +49,11 @@ export function FilterForm(props) {
                     <Accordion.Body>
                         <div className="check-container">
                             <div className="one-checkbox col-md-4">
+                                <p></p>
                                 {categoryTitleArray[0]}
                                 {QuestionArray[0]}
-                                {checkboxforEach(cuisineArray)}
-                                <p></p>
-                                {QuestionArray[1]}
-                                {checkboxforEach(dietaryArray)}
-                            </div>
-                            <div className="one-checkbox col-md-4">
-                                <p></p>
-                                {categoryTitleArray[1]}
-                                {QuestionArray[2]}
                                 {checkboxforEach(typeArray)}
                                 <p></p>
-                                {QuestionArray[3]}
-                                {checkboxforEach(ratingArray)}
-                            </div>
-                            <div className="one-checkbox col-md-4" >
-                                <p></p>
-                                {categoryTitleArray[2]}
-                                {QuestionArray[4]}
-                                {checkboxforEach(budgeteArray)}
-                                <p></p>
-                                {QuestionArray[5]}
-                                {checkboxforEach(foodArray)}
                             </div>
                         </div>
                         <button onClick={props.applyFilterCallback} className="btn btn-outline-dark btn-sm submit">Submit</button>

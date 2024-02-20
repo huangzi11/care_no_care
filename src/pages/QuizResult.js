@@ -2,7 +2,7 @@ import React from 'react';
 
 function EachCard(props) {
 
-  let combinedBadge = [...props.card.category.split(', '),props.card.star,props.card.price];
+  let combinedBadge = [...props.card.category.split(', ')];
   let allBadges = combinedBadge.map((badge) => {
       return (<span key={badge} className="badge rounded-pill bg-light text-dark same">{badge}</span>)
   })
@@ -16,6 +16,13 @@ function EachCard(props) {
               </div>
               <div className="card-footer">
                   {allBadges}
+                  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+                    <div style={{display: 'flex', alignItems: 'center'}}>
+                        <img src={props.card.user_image} roundedCircle style={{width: '20px', height: '20px', marginRight: '10px'}} alt={`picture of the user ${props.card.user_name}`}/>
+                        <div>{props.card.user_name}</div>
+                    </div>
+                    <a href="#" style={{textDecoration: 'none', color: 'inherit'}}>{props.card.comment_time}</a>
+                  </div>
               </div>
           </div>
       </div>

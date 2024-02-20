@@ -11,8 +11,8 @@ export default function Header(props) {
                 <Nav.Item style={{ marginRight: '40px' }} href="#home">
                     <Nav.Link href="/homepage">
                         <span style={{color: 'black'}}>i</span>
-                        <span style={{color: 'orange'}}>DAWG</span>
-                        <span style={{color: 'black'}}>KNOW</span>
+                        <span style={{color: 'black'}}>DAWG</span>
+                        <span style={{color: 'purple'}}>KNOW</span>
                     </Nav.Link>
                 </Nav.Item>
             </Nav>

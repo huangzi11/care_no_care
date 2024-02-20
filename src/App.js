@@ -20,7 +20,7 @@ const App = (props) => {
   const [order, setOrder] = useState(props.restaurants_data);
   const [filterOptions, setFilterOptions] = useState(() => {
     if (props.card && props.card.category) {
-      const combinedBadge = [...props.restaurants_data.category.split(', '), props.restaurants_data.star, props.restaurants_data.price];
+      const combinedBadge = [...props.restaurants_data.category.split(', ')];
       return combinedBadge;
     } else {
       return [];
@@ -39,74 +39,20 @@ const App = (props) => {
     let filteredData = RestaurantData.filter((restaurant) => {
       for (const [key, value] of Object.entries(filterOptions)) {
         if (value) {
-          if (key === 'American' && !restaurant.category.includes('American')) {
+          if (key === 'Student Organization' && !restaurant.category.includes('Student Organization')) {
             return false;
           }
-          if (key === 'Chinese' && !restaurant.category.includes('Chinese')) {
+          if (key === 'Election' && !restaurant.category.includes('Election')) {
             return false;
-          } else if (key === 'Indian' && !restaurant.category.includes('Indian')) {
+          } else if (key === 'Scholarships' && !restaurant.category.includes('Scholarships')) {
             return false;
-          } else if (key === 'Hawaiian' && !restaurant.category.includes('Hawaiian')) {
+          } else if (key === 'Diversity' && !restaurant.category.includes('Diversity')) {
             return false;
-          } else if (key === 'Vietnamese' && !restaurant.category.includes('Vietnamese')) {
+          } else if (key === 'Industry' && !restaurant.category.includes('Industry')) {
             return false;
-          } else if (key === 'Japanese' && !restaurant.category.includes('Japanese')) {
+          } else if (key === 'Career Opportunities' && !restaurant.category.includes('Career Opportunities')) {
             return false;
-          } else if (key === 'Mexican' && !restaurant.category.includes('Mexican')) {
-            return false;
-          } else if (key === 'Mediterranean' && !restaurant.category.includes('Mediterranean')) {
-            return false;
-          } else if (key === 'Vegetarian' && !restaurant.category.includes('Vegetarian')) {
-            return false;
-          } else if (key === 'Vegan' && !restaurant.category.includes('Vegan')) {
-            return false;
-          } else if (key === 'Gluten-free' && !restaurant.category.includes('Gluten-free')) {
-            return false;
-          } else if (key === 'Seafood' && restaurant.category.includes('Seafood')) {
-            return false;
-          } else if (key === 'Bar' && !restaurant.category.includes('Bar')) {
-            return false;
-          } else if (key === 'Barbeque' && !restaurant.category.includes('Barbeque')) {
-            return false;
-          } else if (key === 'Venues & Event Spaces' && !restaurant.category.includes('Venues & Event Spaces')) {
-            return false;
-          } else if (key === 'Cafe' && !restaurant.category.includes('Cafe')) {
-            return false;
-          } else if (key === 'Breakfast & Brunch' && !restaurant.category.includes('Breakfast & Brunch')) {
-            return false;
-          } else if (key === 'Bakeries' && !restaurant.category.includes('Bakeries')) {
-            return false;
-          } else if (key === 'Desserts' && !restaurant.category.includes('Desserts')) {
-            return false;
-          } else if (key === 'Noodles' && !restaurant.category.includes('Noodles')) {
-            return false;
-          } else if (key === 'Desserts' && !restaurant.category.includes('Desserts')) {
-            return false;
-          } else if (key === 'Burgers' && !restaurant.category.includes('Burgers')) {
-            return false;
-          } else if (key === 'Bubble Tea' && !restaurant.category.includes('Bubble Tea')) {
-            return false;
-          } else if (key === 'Hot Pot' && !restaurant.category.includes('Hot Pot')) {
-            return false;
-          } else if (key === 'Tacos' && !restaurant.category.includes('Tacos')) {
-            return false;
-          } else if (key === '1' && restaurant.star !== '1') {
-            return false;
-          } else if (key === '2' && restaurant.star !== '2') {
-            return false;
-          } else if (key === '3' && restaurant.star !== '3') {
-            return false;
-          } else if (key === '4' && restaurant.star !== '4') {
-            return false;
-          } else if (key === '5' && restaurant.star !== '5') {
-            return false;
-          } else if (key === '$' && restaurant.price !== '$') {
-            return false;
-          } else if (key === '$$' && restaurant.price !== '$$') {
-            return false;
-          } else if (key === '$$$' && restaurant.price !== '$$$') {
-            return false;
-          } else if (key === '$$$$' && restaurant.price !== '$$$$') {
+          } else if (key === 'Panel Talk' && !restaurant.category.includes('Panel Talk')) {
             return false;
           }
         }

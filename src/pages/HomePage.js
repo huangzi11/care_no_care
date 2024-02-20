@@ -26,8 +26,8 @@ function Sentence() {
   return (
     <main>
       <div className="home">
-        <p className="welcome">Welcome to S<span className="highlight">eat</span>tle!</p>
-        <p className="what">What do you want to eat?</p>
+        <p className="welcome">Welcome to iDawg<span className="highlight">Know</span></p>
+        <p className="what">What do you care today?</p>
       </div>
     </main>
   );
@@ -42,7 +42,7 @@ function SearchBar({ searchQuery, setSearchQuery }) {
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Search For Cuisines, Location"
+          placeholder="Search For Information"
           value={searchQuery}
           onChange={handleInputChange}
           className="search-input"
@@ -81,8 +81,7 @@ function HomeCard({ restaurant }) {
       />
       <Card.Body>
         <Card.Title>{restaurant.name}</Card.Title>
-        <Card.Text>Area: {restaurant.area}, Seattle</Card.Text> 
-        <Card.Text>Food Type: {restaurant.category}</Card.Text>
+        <Card.Text>Info Type: {restaurant.category}</Card.Text>
       </Card.Body>
       <Card.Footer
         className="text-muted"
