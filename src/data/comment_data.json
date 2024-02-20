@@ -105,7 +105,7 @@
         "comment_under": "A trendy speakeasy-style bar with a unique cocktail menu and a cool, underground vibe."
     },
     {
-        "name": "Eden Hill Restaurant",
+        "name": "Eden Hill info",
         "comment_user_name": "MidnightStrolls",
         "comment_under": "A fine dining experience where innovative dishes and beautiful presentations take center stage."
     },
@@ -122,6 +122,6 @@
     {
         "name": "Morfire",
         "comment_user_name": "FreeSpirit",
-        "comment_under": "A vibrant and fiery Thai restaurant known for its bold flavors and spicy dishes."
+        "comment_under": "A vibrant and fiery Thai info known for its bold flavors and spicy dishes."
     }
 ]

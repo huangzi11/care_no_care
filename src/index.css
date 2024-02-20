@@ -275,52 +275,6 @@ span {
     margin-top: 50px;
 }
 
-/* compare */
-
-.CompareCard .card {
-    width: fit-content;
-    background-color: #fffdfd;
-    box-shadow: 0 0 10px rgb(255, 179, 108);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-}
-
-.CompareCard-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.compare-container .card-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.bold-label {
-    font-weight: bold;
-    text-align: center;
-}
-
-.compare-button {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.compare-label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-}
-
-.compare-rating {
-    color: rgb(255, 183, 0);
-}
-
 
 /* community  css */
 .community .card {

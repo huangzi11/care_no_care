@@ -16,13 +16,6 @@ function EachCard(props) {
               </div>
               <div className="card-footer">
                   {allBadges}
-                  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <img src={props.card.user_image} roundedCircle style={{width: '20px', height: '20px', marginRight: '10px'}} alt={`picture of the user ${props.card.user_name}`}/>
-                        <div>{props.card.user_name}</div>
-                    </div>
-                    <a href="#" style={{textDecoration: 'none', color: 'inherit'}}>{props.card.comment_time}</a>
-                  </div>
               </div>
           </div>
       </div>
@@ -36,15 +29,15 @@ export function AllCards(props) {
   const sortedData = props.data;
   console.log(sortedData)
   
-  let cardList = sortedData.map((restaurant) => {
-      return (<EachCard key={restaurant.name} card={restaurant} />)
+  let cardList = sortedData.map((info) => {
+      return (<EachCard key={info.name} card={info} />)
   })
 
   return (
     <section className="products-list">
       <div className="row">
           {cardList}
-          { cardList.length < 1 && <h2 className="sorry">Sorry, there are no restaurant to display with your filters. Please try again.</h2>}
+          { cardList.length < 1 && <h2 className="sorry">Sorry, there are no info to display with your filters. Please try again.</h2>}
       </div>
     </section>
   )

@@ -12,15 +12,14 @@ import LogOutModal from "./pages/LogOut.js";
 import CommunityPage from './pages/CommunityPage';
 import CommunityDetail from './pages/CommunityDetail';
 import HomePage from './pages/HomePage';
-import ComparePage from './pages/ComparePage';
 
 const App = (props) => {
   // quiz checkbox
-  const [RestaurantData, setRestaurantData] = useState(props.restaurants_data);
-  const [order, setOrder] = useState(props.restaurants_data);
+  const [infoData, setinfoData] = useState(props.info_data);
+  const [order, setOrder] = useState(props.info_data);
   const [filterOptions, setFilterOptions] = useState(() => {
     if (props.card && props.card.category) {
-      const combinedBadge = [...props.restaurants_data.category.split(', ')];
+      const combinedBadge = [...props.info_data.category.split(', ')];
       return combinedBadge;
     } else {
       return [];
@@ -36,23 +35,23 @@ const App = (props) => {
   // Because all option are in the category and different option will have different filter ways,
   // I need to use if here but revise the hardcoding for filterOptions
   const applyFilters = (e) => {
-    let filteredData = RestaurantData.filter((restaurant) => {
+    let filteredData = infoData.filter((info) => {
       for (const [key, value] of Object.entries(filterOptions)) {
         if (value) {
-          if (key === 'Student Organization' && !restaurant.category.includes('Student Organization')) {
+          if (key === 'Student Organization' && !info.category.includes('Student Organization')) {
             return false;
           }
-          if (key === 'Election' && !restaurant.category.includes('Election')) {
+          if (key === 'Election' && !info.category.includes('Election')) {
             return false;
-          } else if (key === 'Scholarships' && !restaurant.category.includes('Scholarships')) {
+          } else if (key === 'Scholarships' && !info.category.includes('Scholarships')) {
             return false;
-          } else if (key === 'Diversity' && !restaurant.category.includes('Diversity')) {
+          } else if (key === 'Diversity' && !info.category.includes('Diversity')) {
             return false;
-          } else if (key === 'Industry' && !restaurant.category.includes('Industry')) {
+          } else if (key === 'Industry' && !info.category.includes('Industry')) {
             return false;
-          } else if (key === 'Career Opportunities' && !restaurant.category.includes('Career Opportunities')) {
+          } else if (key === 'Career Opportunities' && !info.category.includes('Career Opportunities')) {
             return false;
-          } else if (key === 'Panel Talk' && !restaurant.category.includes('Panel Talk')) {
+          } else if (key === 'Panel Talk' && !info.category.includes('Panel Talk')) {
             return false;
           }
         }
@@ -80,13 +79,12 @@ const App = (props) => {
       <Header user={currentUser} loading={loading} showLogOut={setShowLogOut} />
       <LogOutModal show={showLogOut} setShowLogOut={setShowLogOut} />
       <Routes>
-        <Route path="homepage" element={<HomePage restaurants_data={props.restaurants_data} />} ></Route>
-        <Route path="community" element={<CommunityPage restaurants_data={props.restaurants_data} />} ></Route>
-        <Route path="community/:restaurantName" element={<CommunityDetail restaurants_data={props.restaurants_data} comment_data={props.comment_data}/>} ></Route>
-        <Route path="quiz" element={<FilterForm applySortCallback={applySort} applyFilterCallback={applyFilters} data={RestaurantData} filterOptions={filterOptions} handleCheckbox={handleCheckbox} />} >
+        <Route path="homepage" element={<HomePage info_data={props.info_data} />} ></Route>
+        <Route path="community" element={<CommunityPage info_data={props.info_data} />} ></Route>
+        <Route path="community/:infoName" element={<CommunityDetail info_data={props.info_data} comment_data={props.comment_data}/>} ></Route>
+        <Route path="quiz" element={<FilterForm applySortCallback={applySort} applyFilterCallback={applyFilters} data={infoData} filterOptions={filterOptions} handleCheckbox={handleCheckbox} />} >
           <Route index element={<AllCards data={order} />} />
         </Route>
-        <Route path="compare" element={<ComparePage restaurants_data={props.restaurants_data} />} ></Route>
         <Route path="signin" element={<LoginPage user={currentUser} loading={loading} />} />
         <Route path="*" element={<Navigate to="/homepage" />} />
       </Routes>

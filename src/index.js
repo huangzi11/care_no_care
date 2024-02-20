@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import restaurants_data from './data/restaurants_data.json';
+import info_data from './data/info_data.json';
 import comment_data from './data/comment_data.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import reportWebVitals from './reportWebVitals';
@@ -28,7 +28,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
    <BrowserRouter>
-    <App restaurants_data={restaurants_data} comment_data={comment_data}/>
+    <App info_data={info_data} comment_data={comment_data}/>
   </BrowserRouter>,
 );
 

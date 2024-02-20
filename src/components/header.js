@@ -25,11 +25,6 @@ export default function Header(props) {
                     </Nav.Link>
                 </Nav.Item>
                 <Nav.Item style={{ marginRight: '40px' }}>
-                    <Nav.Link href="/compare">
-                        <span style={{color: 'black'}}>COMPARE</span>
-                    </Nav.Link>
-                </Nav.Item>
-                <Nav.Item style={{ marginRight: '40px' }}>
                     <Nav.Link href="/community">
                         <span style={{color: 'black'}}>COMMUNITY</span>
                     </Nav.Link>

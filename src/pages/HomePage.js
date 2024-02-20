@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Card } from 'react-bootstrap';
 
 export default function HomePage(props) {
-  const restaurants_data = props.restaurants_data
+  const info_data = props.info_data
   const [searchQuery, setSearchQuery] = useState(""); // State for search query
-  // Filter restaurants based on search query
-  const filteredRestaurants = restaurants_data.filter(restaurant => {
-    return restaurant.name.toLowerCase().includes(searchQuery.toLowerCase());
+  // Filter infos based on search query
+  const filteredinfos = info_data.filter(info => {
+    return info.name.toLowerCase().includes(searchQuery.toLowerCase());
   });
 
   return (
@@ -17,7 +17,7 @@ export default function HomePage(props) {
             <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         </div>
       </div>
-      <HomeBody restaurants_data={filteredRestaurants} />
+      <HomeBody info_data={filteredinfos} />
     </div>
   );
 }
@@ -54,24 +54,24 @@ function SearchBar({ searchQuery, setSearchQuery }) {
     );
   }
 
-function HomeBody({ restaurants_data }) {
+function HomeBody({ info_data }) {
   return (
     <div className="community">
       <div className="container">
-        {restaurants_data.map((restaurant) => {
-          return <HomeCard key={restaurant.id} restaurant={restaurant} />;
+        {info_data.map((info) => {
+          return <HomeCard key={info.id} info={info} />;
         })}
       </div>
     </div>
   );
 }
 
-function HomeCard({ restaurant }) {
+function HomeCard({ info }) {
   return (
     <Card className="Card">
       <Card.Img
-        src={restaurant.Picture_link}
-        alt={restaurant.name}
+        src={info.Picture_link}
+        alt={info.name}
         style={{
           height: '260px',
           width: '100%',
@@ -80,8 +80,8 @@ function HomeCard({ restaurant }) {
         }}
       />
       <Card.Body>
-        <Card.Title>{restaurant.name}</Card.Title>
-        <Card.Text>Info Type: {restaurant.category}</Card.Text>
+        <Card.Title>{info.name}</Card.Title>
+        <Card.Text>INFO Type: {info.category}</Card.Text>
       </Card.Body>
       <Card.Footer
         className="text-muted"
