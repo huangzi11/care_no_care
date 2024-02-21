@@ -1,7 +1,8 @@
 import React from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import { Outlet } from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // takes in entire props.data as props.data
 export function FilterForm(props) {
@@ -35,6 +36,17 @@ export function FilterForm(props) {
         })
         return typeCheckbox
     }
+    const navigate = useNavigate();
+
+    // Function to handle the combined logic
+    const handleSubmitAndNavigate = () => {
+        // First, execute any submission logic or callback
+        props.applyFilterCallback();
+
+        // Then, navigate to the HomePage
+        navigate('/HomePage');
+    };
+
 
     return (
         <div className="quiz">
@@ -56,7 +68,9 @@ export function FilterForm(props) {
                                 <p></p>
                             </div>
                         </div>
-                        <button onClick={props.applyFilterCallback} className="btn btn-outline-dark btn-sm submit">Submit</button>
+                        <button onClick={handleSubmitAndNavigate} className="btn btn-primary btn-lg qb" type="button">
+                            Submit
+                        </button>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>

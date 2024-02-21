@@ -9,21 +9,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 // Firebase
 import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
-// Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBtyKPOtGM74-VEG_jD56Wjun96SWhILGg",
-  authDomain: "info340seattle.firebaseapp.com",
-  projectId: "info340seattle",
-  storageBucket: "info340seattle.appspot.com",
-  messagingSenderId: "646812634569",
-  appId: "1:646812634569:web:e2ba1c9c5d5ad8175f6c18",
-  measurementId: "G-XNZPJFNRPR"
+  apiKey: "AIzaSyDMQ4x0A-_Dq9hHYzPS6Y-qXIgS1APo7z4",
+  authDomain: "info442-wi24.firebaseapp.com",
+  databaseURL: "https://info442-wi24-default-rtdb.firebaseio.com",
+  projectId: "info442-wi24",
+  storageBucket: "info442-wi24.appspot.com",
+  messagingSenderId: "230580287778",
+  appId: "1:230580287778:web:4df8d21892121f2f97cd7b",
+  measurementId: "G-BEC24YCWRZ",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
+const analytics = getAnalytics(app);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

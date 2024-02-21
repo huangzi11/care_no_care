@@ -79,11 +79,10 @@ const App = (props) => {
       <Header user={currentUser} loading={loading} showLogOut={setShowLogOut} />
       <LogOutModal show={showLogOut} setShowLogOut={setShowLogOut} />
       <Routes>
-        <Route path="homepage" element={<HomePage info_data={props.info_data} />} ></Route>
+        <Route path="homepage" index element={<AllCards data={order} />} ></Route>
         <Route path="community" element={<CommunityPage info_data={props.info_data} />} ></Route>
         <Route path="community/:infoName" element={<CommunityDetail info_data={props.info_data} comment_data={props.comment_data}/>} ></Route>
         <Route path="quiz" element={<FilterForm applySortCallback={applySort} applyFilterCallback={applyFilters} data={infoData} filterOptions={filterOptions} handleCheckbox={handleCheckbox} />} >
-          <Route index element={<AllCards data={order} />} />
         </Route>
         <Route path="signin" element={<LoginPage user={currentUser} loading={loading} />} />
         <Route path="*" element={<Navigate to="/homepage" />} />
