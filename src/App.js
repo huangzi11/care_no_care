@@ -14,17 +14,8 @@ import CommunityDetail from './pages/CommunityDetail';
 import HomePage from './pages/HomePage';
 
 const App = (props) => {
-  // quiz checkbox
-  const [infoData, setinfoData] = useState(props.info_data);
+  // Initialize infoData and order states
   const [order, setOrder] = useState(props.info_data);
-  const [filterOptions, setFilterOptions] = useState(() => {
-    if (props.card && props.card.category) {
-      const combinedBadge = [...props.info_data.category.split(', ')];
-      return combinedBadge;
-    } else {
-      return [];
-    }
-  });
 
   const applySort = (value) => {
     if (value === '') {
@@ -60,38 +51,61 @@ const App = (props) => {
     });
     setOrder(filteredData);
   }
+  const [filterOptions, setFilterOptions] = useState(() => {
+    const savedOptions = localStorage.getItem('filterOptions');
+    return savedOptions ? JSON.parse(savedOptions) : {};
+  });
 
-  const handleCheckbox = (e) => {
-    let name = e.target.name;
-    setFilterOptions({ ...filterOptions, [name]: !filterOptions[name] })
-  }
+  const [infoData, setInfoData] = useState(() => {
+    const savedInfoData = localStorage.getItem('infoData');
+    return savedInfoData ? JSON.parse(savedInfoData) : props.info_data; // Fallback to props.info_data if nothing is saved
+  });
 
-  // Start up user authentication
+  useEffect(() => {
+    localStorage.setItem('filterOptions', JSON.stringify(filterOptions));
+    // Consider efficiency and necessity before persisting infoData
+    // localStorage.setItem('infoData', JSON.stringify(infoData));
+  }, [filterOptions, infoData]);
+
+  useEffect(() => {
+    applyFilters(); // Call a function that applies filters based on filterOptions to info_data
+  }, []); 
+  
+  const getFilterOptions = () => filterOptions;
+  const handleCheckbox = (event) => {
+    const { name, checked } = event.target;
+    setFilterOptions(prev => ({ ...prev, [name]: checked }));
+  };
+  // User authentication state
   const [user, loading] = useAuthState(getAuth());
   const currentUser = user;
 
-  // Dealing with log out modal
+  // Log out modal state
   const [showLogOut, setShowLogOut] = useState(false);
 
   return (
-
     <div className="background">
       <Header user={currentUser} loading={loading} showLogOut={setShowLogOut} />
       <LogOutModal show={showLogOut} setShowLogOut={setShowLogOut} />
       <Routes>
-        <Route path="homepage" index element={<AllCards data={order} />} ></Route>
-        <Route path="community" element={<CommunityPage info_data={props.info_data} />} ></Route>
-        <Route path="community/:infoName" element={<CommunityDetail info_data={props.info_data} comment_data={props.comment_data}/>} ></Route>
-        <Route path="quiz" element={<FilterForm applySortCallback={applySort} applyFilterCallback={applyFilters} data={infoData} filterOptions={filterOptions} handleCheckbox={handleCheckbox} />} >
-        </Route>
-        <Route path="signin" element={<LoginPage user={currentUser} loading={loading} />} />
+        <Route path="/homepage" element={<AllCards data={order} />} />
+        <Route path="/community" element={<CommunityPage info_data={props.info_data} />} />
+        <Route path="/community/:infoName" element={<CommunityDetail info_data={props.info_data} comment_data={props.comment_data} />} />
+        <Route path="/quiz" element={
+          <FilterForm
+            applySortCallback={applySort} 
+            applyFilterCallback={() => applyFilters()}
+            setFilterOptions={setFilterOptions}
+            filterOptions={filterOptions}
+            handleCheckbox={handleCheckbox}
+          />}
+        />
+        <Route path="/signin" element={<LoginPage user={currentUser} loading={loading} />} />
         <Route path="*" element={<Navigate to="/homepage" />} />
       </Routes>
       <Footer />
     </div>
-
   );
 }
-
 
 export default App;

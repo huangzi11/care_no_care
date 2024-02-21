@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Accordion from 'react-bootstrap/Accordion';
-import { Outlet } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
-// takes in entire props.data as props.data
 export function FilterForm(props) {
+    const navigate = useNavigate();
 
-
+    // Assuming filterOptions is managed outside and passed as props,
+    // if not, here's how to manage it locally including persisting across reloads.
     let parts = ['Information Category'];
     let questions = ['What category of information do you care about?']
     let type = ["Student Organization", "Election", "Scholarships", "Diversity", "Industry", "Career Opportunities", "Panel Talk"]
@@ -36,7 +35,6 @@ export function FilterForm(props) {
         })
         return typeCheckbox
     }
-    const navigate = useNavigate();
 
     // Function to handle the combined logic
     const handleSubmitAndNavigate = () => {
@@ -46,8 +44,8 @@ export function FilterForm(props) {
         // Then, navigate to the HomePage
         navigate('/HomePage');
     };
-
-
+    
+    
     return (
         <div className="quiz">
             <div className="quiz_title">
