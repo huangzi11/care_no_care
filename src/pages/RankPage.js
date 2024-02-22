@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Card, Button, Image } from "react-bootstrap";
+import React from "react";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 export default function ComparisonTable({ info_data }) {
   const sortedData = [...info_data].sort((a, b) => b.num_cares - a.num_cares);
@@ -31,7 +31,7 @@ export default function ComparisonTable({ info_data }) {
 }
 
 function InfoTableRow({ info }) {
-  const { category, num_cares, name, Picture_link } = info; // Destructure data for easier access
+  const { category } = info; // Destructure data for easier access
   let combinedBadge = category.split(", ");
   let allBadges = combinedBadge.map((badge) => (
     <span key={badge} className="badge rounded-pill bg-light text-dark same">
