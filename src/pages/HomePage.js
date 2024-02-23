@@ -88,34 +88,3 @@ function HomeCard({ info }) {
     </Card>
   );
 }
-
-// function HomeCard({ info }) {
-//   const navigate = useNavigate();
-
-//   const handleReadMoreClick = () => {
-//     navigate(`/detail/${info.name}`); // Navigate to the detail page
-//   };
-
-//   return (
-//     <Card className="Card">
-//       <Card.Img
-//         src={info.Picture_link}
-//         alt={info.name}
-//         style={{
-//           height: "260px",
-//           width: "100%",
-//           objectFit: "cover",
-//           border: "3px solid #ddd",
-//         }}
-//       />
-//       <Card.Body>
-//         <Card.Title>{info.name}</Card.Title>
-//         <Card.Text>INFO Type: {info.category}</Card.Text>
-//         <Button variant="primary" onClick={handleReadMoreClick}>
-//           Read More
-//         </Button>{" "}
-//         {/* Add this button */}
-//       </Card.Body>
-//     </Card>
-//   );
-// }

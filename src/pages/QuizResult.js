@@ -13,7 +13,7 @@ function EachCard({ card }) {
     <Card className="CommunityCard">
       <Card.Img
         src={card.Picture_link}
-        style={{ height: "400px", width: "100%", objectFit: "cover" }}
+        style={{ height: "400px", width: "100%", objectFit: "contain" }}
         alt={`picture of the info ${card.name}`}
       />
       <Card.Body>
@@ -52,36 +52,28 @@ function EachCard({ card }) {
       </Link>
     </Card>
   );
-  // return (
-  //   <div className="col-md-4 col-lg-3 d-flex mt-4">
-  //     <div className="card-quiz">
-  //       <div className="card-body">
-  //         <img
-  //           src={card.Picture_link}
-  //           className="card-quiz-img-top"
-  //           alt={card.name}
-  //         />
-  //         <h2 className="card-text-name">{card.name}</h2>
-  //       </div>
-  //       <div className="card-footer">{allBadges}</div>
-  //     </div>
-  //   </div>
-  // );
 }
 
 export function AllCards({ data }) {
-  let cardList = data.map((info) => <EachCard key={info.name} card={info} />);
+  let cardList = data.map((info) => (
+    // Wrap EachCard in a div with Bootstrap grid classes
+    <div className="col-md-4" key={info.name}>
+      <EachCard card={info} />
+    </div>
+  ));
 
   return (
     <section className="products-list">
-      <div className="row">
-        {cardList}
-        {cardList.length < 1 && (
-          <h2 className="sorry">
-            Sorry, there are no info to display with your filters. Please try
-            again.
-          </h2>
-        )}
+      <div className="container">
+        <div className="row">
+          {cardList}
+          {cardList.length < 1 && (
+            <h2 className="sorry">
+              Sorry, there are no info to display with your filters. Please try
+              again.
+            </h2>
+          )}
+        </div>
       </div>
     </section>
   );
