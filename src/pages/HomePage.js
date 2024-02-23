@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Card } from 'react-bootstrap';
+import { Card, Button, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function HomePage(props) {
-  const info_data = props.info_data
+  const info_data = props.info_data;
   const [searchQuery, setSearchQuery] = useState(""); // State for search query
   // Filter infos based on search query
-  const filteredinfos = info_data.filter(info => {
+  const filteredinfos = info_data.filter((info) => {
     return info.name.toLowerCase().includes(searchQuery.toLowerCase());
   });
 
@@ -14,7 +15,10 @@ export default function HomePage(props) {
       <div className="sentence-container">
         <Sentence />
         <div className="search-bar-container">
-            <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+          <SearchBar
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
         </div>
       </div>
       <HomeBody info_data={filteredinfos} />
@@ -26,7 +30,9 @@ function Sentence() {
   return (
     <main>
       <div className="home">
-        <p className="welcome">Welcome to iDawg<span className="highlight">Know</span></p>
+        <p className="welcome">
+          Welcome to iDawg<span className="highlight">Know</span>
+        </p>
         <p className="what">What do you care today?</p>
       </div>
     </main>
@@ -34,25 +40,25 @@ function Sentence() {
 }
 
 function SearchBar({ searchQuery, setSearchQuery }) {
-    const handleInputChange = (event) => {
-      setSearchQuery(event.target.value);
-    };
-  
-    return (
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Search For Information"
-          value={searchQuery}
-          onChange={handleInputChange}
-          className="search-input"
-        />
-        <button className="search-button">
-          <i className="fas fa-search"></i>
-        </button>
-      </div>
-    );
-  }
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  return (
+    <div className="search-bar">
+      <input
+        type="text"
+        placeholder="Search For Information"
+        value={searchQuery}
+        onChange={handleInputChange}
+        className="search-input"
+      />
+      <button className="search-button">
+        <i className="fas fa-search"></i>
+      </button>
+    </div>
+  );
+}
 
 function HomeBody({ info_data }) {
   return (
@@ -68,28 +74,48 @@ function HomeBody({ info_data }) {
 
 function HomeCard({ info }) {
   return (
-    <Card className="Card">
-      <Card.Img
-        src={info.Picture_link}
-        alt={info.name}
-        style={{
-          height: '260px',
-          width: '100%',
-          objectFit: 'cover',
-          border: '3px solid #ddd'
-        }}
-      />
+    <Card className="my-3" style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={info.Picture_link} />
       <Card.Body>
         <Card.Title>{info.name}</Card.Title>
-        <Card.Text>INFO Type: {info.category}</Card.Text>
+        <Card.Text>
+          Some quick example text to build on the card title.
+        </Card.Text>
+        <Link to={`/community/${info.name}`}>
+          <Button variant="primary">Read More</Button>
+        </Link>
       </Card.Body>
-      <Card.Footer
-        className="text-muted"
-        style={{ backgroundColor: 'white', border: 'none' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        </div>
-      </Card.Footer>
     </Card>
   );
 }
 
+// function HomeCard({ info }) {
+//   const navigate = useNavigate();
+
+//   const handleReadMoreClick = () => {
+//     navigate(`/detail/${info.name}`); // Navigate to the detail page
+//   };
+
+//   return (
+//     <Card className="Card">
+//       <Card.Img
+//         src={info.Picture_link}
+//         alt={info.name}
+//         style={{
+//           height: "260px",
+//           width: "100%",
+//           objectFit: "cover",
+//           border: "3px solid #ddd",
+//         }}
+//       />
+//       <Card.Body>
+//         <Card.Title>{info.name}</Card.Title>
+//         <Card.Text>INFO Type: {info.category}</Card.Text>
+//         <Button variant="primary" onClick={handleReadMoreClick}>
+//           Read More
+//         </Button>{" "}
+//         {/* Add this button */}
+//       </Card.Body>
+//     </Card>
+//   );
+// }
