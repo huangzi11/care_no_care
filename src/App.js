@@ -9,10 +9,8 @@ import LoginPage from "./pages/SignIn";
 import { getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import LogOutModal from "./pages/LogOut.js";
-import CommunityPage from "./pages/CommunityPage";
 import CommunityDetail from "./pages/CommunityDetail";
 import ComparisonTable from "./pages/RankPage.js";
-import HomePage from "./pages/HomePage";
 
 const App = (props) => {
   // Initialize infoData and order states
@@ -111,10 +109,6 @@ const App = (props) => {
         <Route
           path="/trending"
           element={<ComparisonTable info_data={infoData} />}
-        />
-        <Route
-          path="/community"
-          element={<CommunityPage info_data={props.info_data} />}
         />
         <Route
           path="/community/:infoName"

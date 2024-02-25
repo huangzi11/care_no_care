@@ -107,5 +107,55 @@
         "Picture_link": "/img/img10.jpg",
         "user_name": "Trent Hill, Associate Teaching Professor",
         "user_image": "/img/user_image10.jpg"
-    }
+    },
+    {
+        "name": "Ed Mignon Distinguished Lecture with Dr.Wendy Chun",
+        "descr": "Join us for the Ed Mignon Distinguished Lecture with Wendy Hui Kyong Chun, Simon Fraser University’s Canada 150 Research Chair in New Media, Professor in the School of Communication, and Director of the Digital Democracies Institute. At the Institute, she leads the Mellon-funded Data Fluencies Project, which combines the interpretative traditions of the arts and humanities with critical work in the data sciences to express, imagine, and create innovative engagements with (and resistances to) our data-filled world. She has studied both Systems Design Engineering and English Literature, which she combines and mutates in her research on digital media. She has authored many books, including: Control and Freedom: Power and Paranoia in the Age of Fiber Optics (MIT, 2006), Programmed Visions: Software and Memory (MIT 2011), Updating to Remain the Same: Habitual New Media (MIT 2016), and Discriminating Data: Correlation, Neighborhoods, and the New Politics of Recognition (2021, MIT Press). She has been Professor and Chair of the Department of Modern Culture and Media at Brown University, where she worked for almost two decades and is currently a Visiting Professor. She is a Fellow of the Royal Society of Canada, and has also held fellowships from: the Guggenheim, ACLS, American Academy of Berlin, Radcliffe Institute for Advanced Study at Harvard. The Ed Mignon Distinguished Lectureship is named after UW Information School alumnus and former faculty member Dr. Edmond Mignon. It is made possible by a gift from his wife, Molly Mignon.",
+        "publish_time": "25 days ago",
+        "category": "Lecture, Panel Talk",
+        "num_cares": 128,
+        "Picture_link": "/img/img11.jpg",
+        "user_name": "Informatics Program Coordinator",
+        "user_image": "/img/user_image6.jpg"
+      },
+      {
+        "name": "iStartup Lab",
+        "descr": "Learn how to find funding for your student startup in this online panel discussion from the iStartup Lab. How to turn your class project or hackathon concept into a startup on Friday, January 19, 2024, 12:00-1:00 pm pacific time in an In-person workshop at UW Seattle campus, and how to find funding for your student startup on Friday, March 8, 2024, 12:00-1:00 pm pacific time in a Panel discussion on Zoom. To register for our events, please fill out the RSVP form.",
+        "publish_time": "15 days ago",
+        "category": "Career Opportunity, Industry",
+        "num_cares": 93,
+        "Picture_link": "/img/img12.jpg",
+        "user_name": "Informatics Program Coordinator",
+        "user_image": "/img/user_image6.jpg"
+      },
+      {
+        "name": "Out at Work: Navigating Authenticity in Professional Spaces",
+        "descr": "Join iQueeries, the Informatics Undergraduate Association (IUGA), and the Office of IDEAS for 'Out at Work: Navigating Authenticity in Professional Spaces,' a panel discussion featuring inspiring individuals sharing their experiences as openly queer professionals. Explore personal narratives, inclusivity in the workplace, and the intersectionality of queer identities. Learn about support networks, allyship, and the journey to create more inclusive work environments. Open to all, this event offers a chance for meaningful dialogue, connection, and empowerment. Admission is free and food and refreshments will be provided! RSVP LINK: https://forms.gle/EAzoxAKYVJsCXWze7",
+        "publish_time": "5 days ago",
+        "category": "Student Organization, Panel Talk, Diversity",
+        "num_cares": 57,
+        "Picture_link": "/img/img13.jpg",
+        "user_name": "Informatics Program Coordinator",
+        "user_image": "/img/user_image6.jpg"
+      },
+      {
+        "name": "WINFO HCI, Design + Accessibility in Tech Panel",
+        "descr": "Interested in Human Computer Interaction (HCI)? Want to learn more about accessibility in HCI? Join WINFO’s Diversity Committee for a panel discussion of HCI Researchers! Come to learn about past projects and research they’ve worked on and enjoy yummy snacks! DATE: Thursday, Feb 1st TIME: 3:30-4:45 PM WHERE: HUB 334",
+        "publish_time": "8 days ago",
+        "category": "Student Organization, Panel Talk, Research",
+        "num_cares": 93,
+        "Picture_link": "/img/img14.jpg",
+        "user_name": "Informatics Program Coordinator",
+        "user_image": "/img/user_image6.jpg"
+      },
+      {
+        "name": "[IUGA MERCH] MERCH SALE!!",
+        "descr": "Hey iSchoolers! Did you miss last quarter’s merch drop and wish you had ordered an awesome quarter zip or fun hoodie? Want to help IUGA fund cooler and bigger events? Well fear not! We are holding an in-person MERCH SALE next week! When: 1/23 (Tuesday) from 2-4:30PM (stop by at any time!) Where: iLounge (4th Floor Mary Gates Hall) What to bring: Husky Card, payment method Payments accepted: Credit Card, Venmo, Paypal, Cash The designs and prices are in this document. Currently we still have items in all designs and sizes, but they will go quick! If you plan on attending, we encourage you fill out the (optional) RSVP form- depending on stock, we will try and hold some items for RSVP’d members (but no guarantees so we recommend you swing by early!) All profits will go to funding IUGA events and projects- meaning it goes back to you! If you have any questions, please email Sheamin at sheakim2@uw.edu. We can’t wait to see everyone decked out in swag! Best, IUGA Board 2023 - 2024 Informatics Undergraduate Association",
+        "publish_time": "22 days ago",
+        "category": "Student Organization",
+        "num_cares": 49,
+        "Picture_link": "/img/img15.jpg",
+        "user_name": "Informatics Program Coordinator",
+        "user_image": "/img/user_image6.jpg"
+      }
 ]

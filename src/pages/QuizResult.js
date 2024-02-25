@@ -19,6 +19,9 @@ function EachCard({ card }) {
       <Card.Body>
         <Card.Title>{card.name}</Card.Title>
         <Card.Text>{card.comment}</Card.Text>
+        <div>
+            {allBadges}
+        </div>
       </Card.Body>
       <Card.Footer
         className="text-muted"
@@ -40,9 +43,6 @@ function EachCard({ card }) {
             />
             <div>{card.user_name}</div>
           </div>
-          <a href="#" style={{ textDecoration: "none", color: "inherit" }}>
-            {card.comment_time}
-          </a>
         </div>
       </Card.Footer>
       <Link to={`/community/${card.name}`}>
@@ -64,6 +64,10 @@ export function AllCards({ data }) {
 
   return (
     <section className="products-list">
+      <header className="rank-header">
+        <h1>Your Most Cared INFO</h1>
+        <p>Based on your QUIZ</p>
+      </header>
       <div className="container">
         <div className="row">
           {cardList}
