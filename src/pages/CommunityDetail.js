@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Card, Button, Image, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
-export default function CommunityDetail({ info_data, comment_data }) {
+export default function CommunityDetail({ info_data, comment_data, username}) {
+  
   let { infoName } = useParams();
   const [info, setInfo] = useState({});
   const [isCared, setIsCared] = useState(false);
@@ -24,15 +25,68 @@ export default function CommunityDetail({ info_data, comment_data }) {
     setIsCared(newCaredStatus);
 
     // Update the number of cares in the local state and localStorage
-    const updatedInfo = {
+  const updatedInfo = {
       ...info,
       num_cared: newCaredStatus ? info.num_cared + 1 : Math.max(0, info.num_cared - 1),
       cared: newCaredStatus,
-    };
+  };
 
-    setInfo(updatedInfo);
+  setInfo(updatedInfo);
     localStorage.setItem(`cared-${infoName}`, newCaredStatus.toString());
   };
+
+  let { detailName } = useParams();
+
+    const [details_data, setdetails_data] = useState([]);
+    const [detail, setdetail] = useState({});
+
+    useEffect(() => {
+        fetch('/data/info_data.json')
+        .then((response) => response.json())
+        .then((data) => setdetails_data(data))
+    }, []); 
+
+    useEffect(() => {
+        if (details_data.length) {
+            const founddetail = details_data.find(r => r.name === detailName);
+            setdetail(founddetail);
+        }
+    }, [details_data, detailName]);
+
+    // prepare the comment data
+
+    const [comments, setComments] = React.useState(() => {
+        const existingList = localStorage.getItem('commentList');
+        return existingList ? JSON.parse(existingList) : comment_data;
+    });
+    const [comment, setComment] = React.useState('');
+    
+    useEffect(() => {
+        localStorage.setItem('commentList', JSON.stringify(comments));
+    }, [comments]);
+
+    // prepare the comment form
+    const submitComment = (e) => {
+        setComments([...comments, {name: detail.name, comment_user_name: username, comment_under: comment}]);
+        setComment('');
+    }
+
+    const changeComment = (e) => {
+        setComment(e.target.value);
+    }
+
+    const comment_list = comments.map((comment) => {
+        if (comment.name !== detail.name) {
+            return null
+        }
+        return (
+            <div key={comment.comment_under}>
+                <strong>{comment.comment_user_name}</strong>
+                <p>{comment.comment_under}</p>
+            </div>
+        )
+    })
+
 
   return (
     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', height: '100vh'}}>
@@ -63,13 +117,17 @@ export default function CommunityDetail({ info_data, comment_data }) {
               {info.descr}
             </Card.Text>
             <small className="text-muted">{info.publish_time}</small>
-            <div style={{position: 'absolute', bottom: '0', width: '92%', display: 'flex', justifyContent: 'space-between'}}>
-              <Form.Group className="mb-3" style={{flex: 1, marginRight: '10px'}}>
-                <Form.Control type="text" placeholder="Add a comment..." />
-              </Form.Group>
-              <Button variant="primary" type="submit" style={{height: '38px'}}>
-                Submit
-              </Button>
+            <div className='commentList' >
+                {comment_list}
+            </div>
+            <label htmlFor='comment_submit'>comment</label>
+            <div className='commentSection'>
+                <Form.Group className="commentForm mb-3">
+                    <Form.Control type="comment_submit" placeholder="Add a comment..." value={comment} onChange={changeComment}/>
+                </Form.Group>
+                <Button className='commentButton' variant="primary" type="submit" onClick={submitComment}>
+                    Submit
+                </Button>
             </div>
           </Card.Body>
         </div>

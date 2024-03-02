@@ -116,6 +116,7 @@ const App = (props) => {
             <CommunityDetail
               info_data={props.info_data}
               comment_data={props.comment_data}
+              username={user ? user.displayName : "Anonymous"}
             />
           }
         />
