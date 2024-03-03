@@ -3,6 +3,9 @@ import Accordion from 'react-bootstrap/Accordion';
 import { useNavigate } from 'react-router-dom';
 
 export function FilterForm(props) {
+    const quizStyle = {
+        padding: '100px'
+    }
     const navigate = useNavigate();
 
     const parts = ['Information Category'];
@@ -39,7 +42,7 @@ export function FilterForm(props) {
     };
 
     return (
-        <div className="quiz">
+        <div className="quiz" style={quizStyle}>
             <div className="quiz_title">
                 <h1>Take a Quiz to Find Your Most Cared INFO</h1>
                 <p className="description">This short quiz will help us find all your most cared information within iSchool</p>
