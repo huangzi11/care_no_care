@@ -102,7 +102,7 @@ export default function CommunityDetail({ info_data, comment_data, username}) {
           <Card.Img 
             variant="top" 
             src={info.Picture_link}
-            style={{width: '50%', objectFit: 'cover'}}
+            style={{width: '100%', objectFit: 'contain'}}
             alt={`picture of the info ${info.name}`}
           />
           <Card.Body style={cardBodyStyle}>

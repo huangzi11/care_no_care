@@ -43,14 +43,13 @@ export default function LoginPage(props) {
   };
 
   return (
-    <div>
+    <div className="login-container">
       {!loadingOrLoggedIn && !proceed && (
-        <div className="container login-container text-center">
+        <div className="login-box">
           <div className="login-text">
-            <h1>Login to continue</h1>
+            <h1 className="signInTitle">Login to continue</h1>
             <p>
-              With an account you can upload your own items and request other
-              user's items.
+              Please enter your uw email
             </p>
           </div>
           <form onSubmit={handleSubmit}>
@@ -74,4 +73,3 @@ export default function LoginPage(props) {
     </div>
   );
 }
-

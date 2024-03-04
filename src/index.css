@@ -369,7 +369,44 @@ table td {
 }
 
 .card-img-top {
-  width: 100% !important; /* Full width of the container */
-  height: auto !important; /* Height is set to auto to maintain the aspect ratio */
-  object-fit: contain !important; /* This will ensure the whole image fits within the container */
+  height: auto; /* Height is set to auto to maintain the aspect ratio */
+}
+
+
+/* set the limit of the image then we can solve the card align issue*/
+.card-img {
+  max-height: 300px; /* Set the maximum height you want */
+  width: auto; /* Maintain the aspect ratio */
+  object-fit: cover; /* This will cover the area without stretching the image */
+}
+
+.row{
+  --bs-gutter-y: 1.5rem !important;
+}
+
+.m-auto{
+  flex-direction: 'column';
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Full viewport height to center vertically in the viewport */
+}
+
+.login-box {
+  width: 600px; /* Fixed width for the square box */
+  padding: 2rem; /* Padding inside the box */
+  background: #fff; /* White background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  border-radius: 8px; /* Rounded corners */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns items horizontally in the center */
+}
+
+.signInTitle{
+  justify-content: center;
+  align-items: center;
 }
