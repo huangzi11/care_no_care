@@ -369,7 +369,34 @@ table td {
 }
 
 .card-img-top {
-  height: 600px; /* Height is set to auto to maintain the aspect ratio */
+  width: 100% !important; /* Full width of the container */
+  height: auto !important; /* Height is set to auto to maintain the aspect ratio */
+  object-fit: contain !important; /* This will ensure the whole image fits within the container*/
+  max-width: 60%;
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column; /* Stack image and text vertically */
+  }
+
+  .card img, .card-body {
+    width: 100%; /* Allow image and text to take full width */
+    object-fit: scale-down; /* Adjust image scaling */
+  }
+}
+
+.signInTitle{
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.signInTitle{
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -384,8 +411,10 @@ table td {
   --bs-gutter-y: 1.5rem !important;
 }
 
-.m-auto{
-  flex-direction: 'column';
+
+.signInTitle{
+  justify-content: center;
+  align-items: center;
 }
 
 .login-container {
@@ -404,13 +433,4 @@ table td {
   display: flex;
   flex-direction: column;
   align-items: center; /* Aligns items horizontally in the center */
-}
-
-.signInTitle{
-  justify-content: center;
-  align-items: center;
-}
-
-.card-body{
-  max-height: auto;
 }

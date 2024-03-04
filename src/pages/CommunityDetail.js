@@ -91,17 +91,19 @@ export default function CommunityDetail({ info_data, comment_data, username}) {
   const cardBodyStyle = {
     width: '50%',
     position: 'relative',
+    height: '600px',
+    maxHeight: '100%',
     overflowY: 'auto' 
   };
 
   return (
     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', height: '100vh'}}>
-      <Card className="m-auto" style={{maxWidth: '90%', flexDirection: 'column'}}>
+      <Card className="m-auto" style={{maxWidth: '90%'}}>
         <div className="d-flex">
           <Card.Img 
             variant="top" 
             src={info.Picture_link}
-            style={{width: 'auto', objectFit: 'contain', height:'auto'}}
+            style={{width: '50%', objectFit: 'cover'}}
             alt={`picture of the info ${info.name}`}
           />
           <Card.Body style={cardBodyStyle}>
@@ -115,7 +117,7 @@ export default function CommunityDetail({ info_data, comment_data, username}) {
               </Button>
 
             </div>
-            <div className="d-flex align-items-center mb-2" >
+            <div className="d-flex align-items-center mb-2">
               <Image src={info.user_image} roundedCircle style={{width: '20px', height: '20px', marginRight: '10px'}} alt={`picture of the user ${info.user_name}`}/>
               <div>{info.user_name}</div>
             </div>
