@@ -369,7 +369,7 @@ table td {
 }
 
 .card-img-top {
-  height: auto; /* Height is set to auto to maintain the aspect ratio */
+  height: 600px; /* Height is set to auto to maintain the aspect ratio */
 }
 
 
@@ -409,4 +409,8 @@ table td {
 .signInTitle{
   justify-content: center;
   align-items: center;
+}
+
+.card-body{
+  max-height: auto;
 }
