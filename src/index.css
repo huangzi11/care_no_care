@@ -368,13 +368,8 @@ table td {
   border: none;
 }
 
-
-/* set the limit of the image then we can solve the card align issue*/
-.card-img {
-  max-height: 300px; /* Set the maximum height you want */
-  width: auto; /* Maintain the aspect ratio */
-  object-fit: cover; /* This will cover the area without stretching the image */
-}
-.row{
-  --bs-gutter-y: 1.5rem !important;
+.card-img-top {
+  width: 100% !important; /* Full width of the container */
+  height: auto !important; /* Height is set to auto to maintain the aspect ratio */
+  object-fit: contain !important; /* This will ensure the whole image fits within the container */
 }

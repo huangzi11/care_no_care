@@ -87,18 +87,25 @@ export default function CommunityDetail({ info_data, comment_data, username}) {
         )
     })
 
+  // Adjusted styling for Card.Body to include a fixed height and make it scrollable
+  const cardBodyStyle = {
+    width: '50%',
+    position: 'relative',
+    maxHeight: '600px', 
+    overflowY: 'auto' 
+  };
 
   return (
     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', height: '100vh'}}>
-      <Card className="m-auto" style={{maxWidth: '80%'}}>
+      <Card className="m-auto" style={{maxWidth: '90%'}}>
         <div className="d-flex">
           <Card.Img 
             variant="top" 
             src={info.Picture_link}
-            style={{width: '70%', objectFit: 'cover'}}
+            style={{width: '50%', objectFit: 'cover'}}
             alt={`picture of the info ${info.name}`}
           />
-          <Card.Body style={{width: '50%', position: 'relative'}}>
+          <Card.Body style={cardBodyStyle}>
             <div className="d-flex justify-content-between align-items-center">
               <Card.Title>{info.name}</Card.Title>
               <Button 
