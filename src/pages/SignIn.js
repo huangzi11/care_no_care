@@ -1,49 +1,76 @@
+import React, { useState } from "react";
 import { getAuth, EmailAuthProvider } from "firebase/auth";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { Navigate } from "react-router-dom";
 
-//an object of configuration values
 const firebaseUIConfig = {
-  // allow email sign in
   signInOptions: [
     { provider: EmailAuthProvider.PROVIDER_ID, requiredDisplayName: true },
   ],
-  signInFlow: 'popup', //don't redirect to authenticate
-  credentialHelper: 'none', //don't show the email account chooser
+  signInFlow: "popup",
+  credentialHelper: "none",
   callbacks: {
-    signInSuccessWithAuthResult: () => {
-      return false; //don't redirect after authentication
-    }
-  }
-}
+    signInSuccessWithAuthResult: () => false,
+  },
+};
 
-// Takes in user object
-// Takes in loading
 export default function LoginPage(props) {
-  //access the "authenticator"
-  const auth = getAuth();
+  const auth = getAuth(); // Corrected from getPardon to getAuth
 
-  // Redirect to profile page when logged in
+  const [email, setEmail] = useState("");
+  const [proceed, setProceed] = useState(false);
+
   if (props.user) {
-    return <Navigate to="/home" />
+    return <Navigate to="/home" />;
   }
 
   let loadingOrLoggedIn = false;
-  if(props.user || props.loading) {
+  if (props.user || props.loading) {
     loadingOrLoggedIn = true;
   }
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email.endsWith("@uw.edu")) {
+      setProceed(true);
+    } else {
+      alert("Please use an email ending with @uw.edu.");
+    }
+  };
+
   return (
     <div>
-      {!loadingOrLoggedIn &&
-        <div className='container login-container text-center'>
-          <div className='login-text'>
+      {!loadingOrLoggedIn && !proceed && (
+        <div className="container login-container text-center">
+          <div className="login-text">
             <h1>Login to continue</h1>
-            <p>With an account you can upload your own items and request other user's items.</p>
+            <p>
+              With an account you can upload your own items and request other
+              user's items.
+            </p>
           </div>
-            <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              value={email}
+              onChange={handleEmailChange}
+              placeholder="Enter your @uw.edu email"
+              required
+            />
+            <button type="submit">Proceed</button>
+          </form>
         </div>
-      }
+      )}
+      {proceed && (
+        <StyledFirebaseAuth
+          uiConfig={firebaseUIConfig}
+          firebaseAuth={getAuth()}
+        />
+      )}
     </div>
   );
 }
