@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button, Image, Form } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
 
 export default function CommunityDetail({ info_data, comment_data, username}) {
-  
+  let navigate = useNavigate();
   let { infoName } = useParams();
   const [info, setInfo] = useState({});
   const [isCared, setIsCared] = useState(false);
@@ -33,6 +33,9 @@ export default function CommunityDetail({ info_data, comment_data, username}) {
 
   setInfo(updatedInfo);
     localStorage.setItem(`cared-${infoName}`, newCaredStatus.toString());
+  };
+  const handleGoBack = () => {
+    navigate('/homepage'); // Navigate to the homepage
   };
 
   let { detailName } = useParams();
@@ -98,6 +101,7 @@ export default function CommunityDetail({ info_data, comment_data, username}) {
 
   return (
     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', height: '100vh'}}>
+      
       <Card className="m-auto" style={{maxWidth: '90%'}}>
         <div className="d-flex">
           <Card.Img 
@@ -114,6 +118,13 @@ export default function CommunityDetail({ info_data, comment_data, username}) {
                 onClick={handleCareClick}
               >
                 {isCared ? "Cancel" : "Care"}
+              </Button>
+              <Button 
+                variant="light" 
+                style={{margin: '10px', alignSelf: 'flex-start'}} 
+                onClick={handleGoBack}
+              >
+                Close
               </Button>
 
             </div>
