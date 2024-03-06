@@ -85,7 +85,6 @@ export function AllCards({ data }) {
     <section className="products-list">
       <header className="rank-header">
         <h1>Your Most Cared INFO</h1>
-        <p>Based on your QUIZ</p>
       </header>
       <div className="container">
         <div className="row">
