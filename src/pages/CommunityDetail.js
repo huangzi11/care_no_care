@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, Button, Image, Form } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
 
-export default function CommunityDetail({ info_data, comment_data, username}) {
+export default function CommunityDetail({ info_data}) {
   let navigate = useNavigate();
   let { infoName } = useParams();
   const [info, setInfo] = useState({});
@@ -19,25 +19,22 @@ export default function CommunityDetail({ info_data, comment_data, username}) {
     }
   }, [infoName, info_data]);
 
-  // Toggle care and update localStorage
-  const handleCareClick = () => {
-    const newCaredStatus = !isCared;
-    setIsCared(newCaredStatus);
-
-    // Update the number of cares in the local state and localStorage
-  const updatedInfo = {
-      ...info,
-      num_cared: newCaredStatus ? info.num_cared + 1 : Math.max(0, info.num_cared - 1),
-      cared: newCaredStatus,
-  };
-
-  setInfo(updatedInfo);
-    localStorage.setItem(`cared-${infoName}`, newCaredStatus.toString());
-  };
   const handleGoBack = () => {
     navigate('/homepage'); // Navigate to the homepage
   };
-
+  const handleJoinGroupChat = () => {
+    // Retrieve existing names from localStorage, or initialize an empty array if none exist
+    const existingNames = JSON.parse(localStorage.getItem('groupChatInterests')) || [];
+  
+    // Check if the current info.name is already in the array to avoid duplicates
+    if (!existingNames.includes(info.name)) {
+      const updatedNames = [...existingNames, info.name];
+      localStorage.setItem('groupChatInterests', JSON.stringify(updatedNames));
+    }
+  
+    navigate('/chat');
+  };
+  
   let { detailName } = useParams();
 
     const [details_data, setdetails_data] = useState([]);
@@ -55,40 +52,6 @@ export default function CommunityDetail({ info_data, comment_data, username}) {
             setdetail(founddetail);
         }
     }, [details_data, detailName]);
-
-    // prepare the comment data
-
-    const [comments, setComments] = React.useState(() => {
-        const existingList = localStorage.getItem('commentList');
-        return existingList ? JSON.parse(existingList) : comment_data;
-    });
-    const [comment, setComment] = React.useState('');
-    
-    useEffect(() => {
-        localStorage.setItem('commentList', JSON.stringify(comments));
-    }, [comments]);
-
-    // prepare the comment form
-    const submitComment = (e) => {
-        setComments([...comments, {name: detail.name, comment_user_name: username, comment_under: comment}]);
-        setComment('');
-    }
-
-    const changeComment = (e) => {
-        setComment(e.target.value);
-    }
-
-    const comment_list = comments.map((comment) => {
-        if (comment.name !== detail.name) {
-            return null
-        }
-        return (
-            <div key={comment.comment_under}>
-                <strong>{comment.comment_user_name}</strong>
-                <p>{comment.comment_under}</p>
-            </div>
-        )
-    })
 
   // Adjusted styling for Card.Body to include a fixed height and make it scrollable
   const cardBodyStyle = {
@@ -114,12 +77,6 @@ export default function CommunityDetail({ info_data, comment_data, username}) {
             <div className="d-flex justify-content-between align-items-center">
               <Card.Title>{info.name}</Card.Title>
               <Button 
-                variant={isCared ? "secondary" : "danger"} 
-                onClick={handleCareClick}
-              >
-                {isCared ? "Cancel" : "Care"}
-              </Button>
-              <Button 
                 variant="light" 
                 style={{margin: '10px', alignSelf: 'flex-start'}} 
                 onClick={handleGoBack}
@@ -136,18 +93,13 @@ export default function CommunityDetail({ info_data, comment_data, username}) {
               {info.descr}
             </Card.Text>
             <small className="text-muted">{info.publish_time}</small>
-            <div className='commentList' >
-                {comment_list}
-            </div>
-            <label htmlFor='comment_submit'>comment</label>
-            <div className='commentSection'>
-                <Form.Group className="commentForm mb-3">
-                    <Form.Control type="comment_submit" placeholder="Add a comment..." value={comment} onChange={changeComment}/>
-                </Form.Group>
-                <Button className='commentButton' variant="primary" type="submit" onClick={submitComment}>
-                    Submit
-                </Button>
-            </div>
+            <Button
+              className="questions"
+              style={{ backgroundColor: 'lightblue',borderColor: "black", color: 'black', margin: '10px', alignSelf: 'flex-start' }}
+              onClick={handleJoinGroupChat}
+            >
+              Have Question? Join Group Chat!
+            </Button>
           </Card.Body>
         </div>
       </Card>

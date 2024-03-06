@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { AllCards } from "./pages/QuizResult.js";
-import { FilterForm } from "./pages/QuizForm.js";
+import { AllCards } from "./pages/HomeCard.js";
+import { CommunityPage } from "./pages/Chat.js";
 import { Routes, Route, Navigate } from "react-router-dom";
 import _ from "lodash";
 import Header from "./components/header";
@@ -11,6 +11,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import LogOutModal from "./pages/LogOut.js";
 import CommunityDetail from "./pages/CommunityDetail";
 import ComparisonTable from "./pages/RankPage.js";
+import ChatDetail from "./pages/ChatDetail.js";
 
 const App = (props) => {
   // Initialize infoData and order states
@@ -120,18 +121,8 @@ const App = (props) => {
             />
           }
         />
-        <Route
-          path="/quiz"
-          element={
-            <FilterForm
-              applySortCallback={applySort}
-              applyFilterCallback={() => applyFilters()}
-              setFilterOptions={setFilterOptions}
-              filterOptions={filterOptions}
-              handleCheckbox={handleCheckbox}
-            />
-          }
-        />
+        <Route path="/chat" element={<CommunityPage />} />
+        <Route path="/chat/:infoName" element={<ChatDetail info_data={props.info_data} comment_data={props.comment_data} username={props.username} />} />
         <Route
           path="/signin"
           element={<LoginPage user={currentUser} loading={loading} />}

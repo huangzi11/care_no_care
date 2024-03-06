@@ -31,8 +31,8 @@ export default function Header(props) {
         {!props.loading && (
           <Nav className="ml-auto">
             <Nav.Item style={{ marginRight: "40px" }}>
-              <Nav.Link to="/quiz" href="/quiz">
-                <span style={{ color: "black" }}>QUIZ</span>
+              <Nav.Link to="/chat" href="/chat">
+                <span style={{ color: "black" }}>CHAT</span>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item style={{ marginRight: "40px" }}>
